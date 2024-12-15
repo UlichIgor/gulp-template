@@ -1,0 +1,20 @@
+@import "./var";
+@import "./sprite";
+@import "./mixins/relative";
+@import "./mixins/zindex";
+@import "./page/header";
+@import "./page/content";
+@import "./page/footer";
+@import "./fonts";
+
+body {
+font-family: "Matemasie";
+  background: $bg;
+  color:$text;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
