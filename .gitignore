@@ -2,3 +2,4 @@
 /dst/*
 /maps/*
 /assets/*
+src/scss/_sprite.scss

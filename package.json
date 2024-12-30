@@ -2,7 +2,7 @@
   "name": "template-gulp",
   "version": "1.0.0",
   "homepage": " https://igorulich.github.io/",
-  "description": "main new version project gulp of update 05.08.2024.",
+  "description": "main new version project gulp of update 30.12.2024.",
   "main": "index.html",
   "scripts": {
     "clean": "rimraf maps assets ",
