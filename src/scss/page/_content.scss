@@ -4,80 +4,44 @@ section.content {
   left: 0;
   width: 100%;
   height: 100%;
-
-
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
-.text {
+.logo h1{
+position: relative;
+  top: 0;
+  left: 0;
+  font-size: calc(10px + 6.9375vw);
+  line-height: calc(11px + 0.135417vh);
+  padding: 24px 16px;
+  border-radius: 17px;
+margin-bottom: 72px;
+color:$text;
+}
+
+
+ .title h2{
   position: relative;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 10% 17% 10% 15%;
-  text-align: center;
-  z-index: z('text');
-}
-
-.text div {
-  display: inline-block;
-
-}
-
-.letter {
-  font-family: "Matemasie", sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  color: $text;
-  text-transform: lowercase;
-  font-size: calc(21px + 3.9375vw);
-  line-height: calc(21px + 9.135417vh);
-
-
-}
-
-.word {
-  padding: 0 0.5%;
-}
-
-.image {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-
-  left: 0;
-  margin: 0 auto;
-  right: 0;
-  width: 256px;
-  height: 256px;
-  z-index: z('image');
-}
-
-a.zip {
-  position: absolute;
-  bottom: 18%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: $bg;
-  background: $text;
-  text-align: center;
- 
-  font-size: calc(10px + 0.9375vw);
+  font-size: calc(10px + 4.9375vw);
   line-height: calc(11px + 0.135417vh);
-  border: solid 8px $text;
   padding: 24px 16px;
   border-radius: 17px;
-  width: 20%;
-  z-index: z('zip');
-  cursor: pointer;
-  &:hover{
-    background: $bg;
-    color: $text;
-    transition-delay: all 0.7s linear;
- 
-  }
+ color:$title;
+
+}
+.content h4{
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: calc(10px + 1.9375vw);
+  line-height: calc(11px + 0.135417vh);
+  padding: 24px 16px;
+  border-radius: 17px;
+  color:$descr;
 }
