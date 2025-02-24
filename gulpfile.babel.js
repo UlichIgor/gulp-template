@@ -5,7 +5,7 @@ import gulpSass from "gulp-sass";
 import { Clean } from "./gulp/dev/Clean.js";
 import { CleanBuild } from "./gulp/prod/CleanBuild.js";
 import { Resources } from "./gulp/dev/Resources.js";
-import { ResourcesBuld } from "./gulp/prod/ResourcesBuld.js";
+import { ResourcesBuild } from "./gulp/prod/ResourcesBuild.js";
 import { Sprite } from "./gulp/dev/Sprite.js";
 import { SpriteBuild } from "./gulp/prod/SpriteBuild.js";
 import { Styles } from "./gulp/dev/Styles.js";
@@ -26,7 +26,15 @@ export const uglify = require("gulp-uglify-es").default;
 export const htmlmin = require("gulp-htmlmin");
 export var browserSync = require("browser-sync").create();
 export var reload = browserSync.reload;
-const fs = require("fs");
+const fs = require('fs');
+fs.stat('your-file.txt', (err, stats) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(stats);
+  }
+});
+
 exports.FontsWoff2 = FontsWoff2;
 exports.FontsWoff2Build = FontsWoff2Build;
 exports.WebpImages = WebpImages;
@@ -36,7 +44,7 @@ exports.CleanBuild = CleanBuild;
 exports.Sprite = Sprite;
 exports.SpriteBuild = SpriteBuild;
 exports.Resources = Resources;
-exports.ResourcesBuld = ResourcesBuld;
+exports.ResourcesBuild = ResourcesBuild;
 exports.Styles = Styles;
 exports.StylesBuild = StylesBuild;
 exports.Scripts = Scripts;
@@ -53,7 +61,7 @@ function production(cb) {
     CleanBuild,
     parallel(FontsWoff2Build),
     parallel(WebpImagesBuild),
-    parallel(ResourcesBuld),
+    parallel(ResourcesBuild),
     parallel(ScriptsBuild),
     parallel(StylesBuild),
     parallel(SpriteBuild),
