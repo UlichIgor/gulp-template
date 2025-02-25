@@ -109,13 +109,12 @@ section.footer {
 }
 
 @font-face {
-  font-family: beer money;
-  src: url("/fonts/beer money.woff2") format("woff2");
+  font-family: beermoney;
+  src: url("/fonts/beermoney.woff2") format("woff2");
 }
 body {
-  font-family: "Matemasie";
+  font-family: "beermoney";
   background: #a9ee8d;
-  color: #c61132;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
