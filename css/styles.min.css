@@ -53,11 +53,7 @@ section.content {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  place-content: center center;
 }
 
 .logo h1 {
@@ -71,7 +67,7 @@ section.content {
   padding: 24px 16px;
   border-radius: 17px;
   margin-bottom: 72px;
-  color: #c61132;
+  color: rgb(198, 17, 50);
 }
 
 .title h2 {
@@ -84,10 +80,10 @@ section.content {
   line-height: calc(11px + 0.135417vh);
   padding: 24px 16px;
   border-radius: 17px;
-  color: #ffbb00;
+  color: rgb(255, 187, 0);
 }
 
-.content h4 {
+.text h4 {
   position: relative;
   top: 0;
   left: 0;
@@ -97,7 +93,7 @@ section.content {
   line-height: calc(11px + 0.135417vh);
   padding: 24px 16px;
   border-radius: 17px;
-  color: #093600;
+  color: rgb(9, 54, 0);
 }
 
 section.footer {
@@ -113,8 +109,8 @@ section.footer {
   src: url("/fonts/beermoney.woff2") format("woff2");
 }
 body {
-  font-family: "beermoney";
-  background: #a9ee8d;
+  font-family: beermoney, sans-serif;
+  background: rgb(169, 238, 141);
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
