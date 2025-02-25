@@ -1,4 +1,4 @@
-@import "./var";
+ @use"var" as vars;
 @import "./sprite";
 @import "./mixins/relative";
 @import "./mixins/zindex";
@@ -9,8 +9,7 @@
 
 body {
 font-family: "Matemasie";
-  background: $bg;
-  color:$text;
+  background: vars.$bg;
   height: 100vh;
   display: flex;
   align-items: center;

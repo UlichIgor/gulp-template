@@ -27,13 +27,6 @@ export const htmlmin = require("gulp-htmlmin");
 export var browserSync = require("browser-sync").create();
 export var reload = browserSync.reload;
 const fs = require('fs');
-fs.stat('your-file.txt', (err, stats) => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log(stats);
-  }
-});
 
 exports.FontsWoff2 = FontsWoff2;
 exports.FontsWoff2Build = FontsWoff2Build;
@@ -68,7 +61,7 @@ function production(cb) {
     parallel(HtmlBuild),
     parallel(BrowsersyncBuild)
   );
-  production();
+  production(cb);
 }
 function development(cb) {
   const development = series(
@@ -77,11 +70,11 @@ function development(cb) {
     parallel(WebpImages),
     parallel(Resources),
     parallel(Styles),
-    parallel(Scripts), 
+    parallel(Scripts),
     parallel(Sprite),
     parallel(Html),
     parallel(Browsersync)
   );
-  development();
+  development(cb);
   cb();
 }

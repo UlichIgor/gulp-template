@@ -20,7 +20,7 @@ position: relative;
   padding: 24px 16px;
   border-radius: 17px;
 margin-bottom: 72px;
-color:$text;
+color:vars.$text;
 }
 
 
@@ -32,7 +32,7 @@ color:$text;
   line-height: calc(11px + 0.135417vh);
   padding: 24px 16px;
   border-radius: 17px;
- color:$title;
+ color:vars.$title;
 
 }
 .content h4{
@@ -43,5 +43,5 @@ color:$text;
   line-height: calc(11px + 0.135417vh);
   padding: 24px 16px;
   border-radius: 17px;
-  color:$descr;
+  color:vars.$descr;
 }
