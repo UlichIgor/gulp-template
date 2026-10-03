@@ -4,6 +4,9 @@
   "homepage": " https://igorulich.github.io/",
   "description": "main new version project gulp of update 11.02.2025.",
   "main": "index.html",
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "scripts": {
     "clean": "rimraf maps assets dist",
     "dev": "gulp development",
