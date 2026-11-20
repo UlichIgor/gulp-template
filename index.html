@@ -10,7 +10,7 @@
   <script src="./course.js" defer></script>
 </head>
 <body>
-  <header class="topbar"><a class="brand" href="./">GULP<span>LAB</span></a><nav><a href="#program">Програма</a><a href="#lab">Практика</a><a href="#exam">Іспит</a><a href="https://github.com/UlichIgor/gulp-template" target="_blank" rel="noreferrer">GitHub ↗</a></nav><button id="themeToggle" class="theme-toggle" type="button" aria-label="Перемкнути тему">☼</button></header>
+  <header class="topbar"><a class="brand" href="./">GULP<span>LAB</span></a><nav><a href="#program">Програма</a><a href="#tasks">Задачі Gulp</a><a href="#lab">Практика</a><a href="#exam">Іспит</a><a href="https://github.com/UlichIgor/gulp-template" target="_blank" rel="noreferrer">GitHub ↗</a></nav><button id="themeToggle" class="theme-toggle" type="button" aria-label="Перемкнути тему">☼</button></header>
   <main>
     <section class="hero reveal">
       <div class="eyebrow">ПРАКТИЧНИЙ КУРС · GULP 5 · УКРАЇНСЬКОЮ</div>
@@ -23,6 +23,13 @@
     <section class="layout reveal" id="program">
       <aside class="sidebar"><div class="side-title">НАВЧАЛЬНИЙ МАРШРУТ</div><label class="search-box"><span>⌕</span><input id="moduleSearch" type="search" placeholder="Знайти урок..." aria-label="Пошук уроків"></label><div id="moduleNav" class="module-nav"></div><div class="side-note"><span class="pulse"></span> Прогрес зберігається на цьому пристрої</div></aside>
       <article class="lesson-panel"><div class="lesson-meta"><span id="lessonNumber">МОДУЛЬ 01</span><span id="lessonDuration">10 хв</span></div><div id="lessonContent"></div><div class="lesson-footer"><button id="prevLesson" class="quiet">← Назад</button><button id="completeLesson" class="primary">Позначити завершеним ✓</button><button id="nextLesson" class="quiet">Далі →</button></div></article>
+    </section>
+    <section class="tasks-section reveal" id="tasks">
+      <div class="section-kicker">ТЕХНІЧНА БІБЛІОТЕКА · 09 ЗАДАЧ</div>
+      <h2>Як працює кожна <em>Gulp-функція.</em></h2>
+      <p>Відкрий картку, щоб побачити призначення, вхідні та вихідні файли, порядок роботи, приклад коду й практичну перевірку. Опис відповідає реалізації цього репозиторію.</p>
+      <div class="tasks-toolbar"><label class="search-box"><span>⌕</span><input id="taskSearch" type="search" placeholder="Знайти функцію або плагін..." aria-label="Пошук задач Gulp"></label><span id="taskCount" class="task-count">9 задач</span></div>
+      <div id="taskLibrary" class="task-library"></div>
     </section>
     <section class="lab-section reveal" id="lab"><div class="section-kicker">ІНТЕРАКТИВНА ПРАКТИКА</div><h2>Збери власний <em>Gulp pipeline.</em></h2><p>Обери операції, подивись на послідовність і скопіюй приклад. Це навчальна модель потоку, а не запуск коду на сервері.</p>
       <div class="lab-grid"><div class="lab-options" id="pipelineOptions"></div><div class="code-card"><div class="code-head"><span>gulpfile.js · pipeline</span><button id="copyPipeline" class="copy">Копіювати</button></div><pre><code id="pipelineCode"></code></pre><div id="pipelineHint" class="hint">Обери одну або кілька операцій ліворуч.</div></div></div>
