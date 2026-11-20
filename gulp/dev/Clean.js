@@ -1,8 +1,7 @@
 "use strict";
-const rimraf = require("rimraf");
+const { rimraf } = require("rimraf");
 
-async function Clean(cb) {
-  rimraf.sync(["assets"]), cb();
+function Clean() {
+  return rimraf("assets");
 }
-module.exports = { Clean }
-  // , "./src/scss/_sprite.scss"
+module.exports = { Clean };
