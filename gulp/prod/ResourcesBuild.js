@@ -2,7 +2,7 @@
 const { src, dest } = require("gulp");
 const config = require("../../paths.js");
 
-function ResourcesBuild(cb) {
-  return src(config.resources.src).pipe(dest(config.resources.prod)), cb();
+function ResourcesBuild() {
+  return src(config.resources.src, { allowEmpty: true }).pipe(dest(config.resources.prod));
 }
 module.exports = { ResourcesBuild };
