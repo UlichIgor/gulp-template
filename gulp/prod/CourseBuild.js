@@ -1,17 +1,17 @@
 "use strict";
-const { src, dest, parallel } = require("gulp");
+const { src, dest } = require("gulp");
+const { pipeline } = require("stream/promises");
 
-function copyCourseToRoot() {
-  return src("./course/**/*", { allowEmpty: false }).pipe(dest("./dist"));
-}
-
-function copyCourseToSubdirectory() {
-  return src("./course/**/*", { allowEmpty: false }).pipe(dest("./dist/course"));
-}
-
-// The course is the public homepage and is also available at /course/.
 function CourseBuild() {
-  return parallel(copyCourseToRoot, copyCourseToSubdirectory)();
+  const copyToRoot = pipeline(
+    src("./course/**/*", { allowEmpty: false }),
+    dest("./dist")
+  );
+  const copyToCourseFolder = pipeline(
+    src("./course/**/*", { allowEmpty: false }),
+    dest("./dist/course")
+  );
+  return Promise.all([copyToRoot, copyToCourseFolder]);
 }
 
 module.exports = { CourseBuild };
