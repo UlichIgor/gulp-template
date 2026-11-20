@@ -3,10 +3,9 @@ const { src, dest } = require("gulp");
 const config = require("../../paths.js");
 const cwebp = require("gulp-cwebp");
 
-const WebpImagesBuild = (cb) => {
-  return src(config.images.src, { encoding: false })
+function WebpImagesBuild() {
+  return src(config.images.src, { encoding: false, allowEmpty: true })
     .pipe(cwebp())
-    .pipe(dest(config.images.dist)),
-    cb();
+    .pipe(dest(config.images.dist));
 }
 module.exports = { WebpImagesBuild };
