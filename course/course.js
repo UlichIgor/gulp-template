@@ -45,20 +45,3 @@ function startExam(){examIndex=0;examScore=0;renderExamQuestion()}
 function renderExamQuestion(){const q=exam[examIndex];$("examBox").innerHTML='<div class="lesson-meta">ПИТАННЯ '+(examIndex+1)+' / '+exam.length+' <span>Правильних: '+examScore+'</span></div><p class="question">'+q[0]+'</p><div class="answers">'+q[1].map((a,i)=>'<label class="answer"><input type="radio" name="examAnswer" value="'+i+'">'+a+'</label>').join("")+'</div><div class="exam-actions"><span class="hint">Поріг складання: 8 із 10</span><button id="nextExam" class="primary">'+(examIndex===exam.length-1?"Завершити":"Наступне →")+'</button></div>';$("nextExam").addEventListener("click",()=>{const selected=document.querySelector('input[name="examAnswer"]:checked');if(!selected){alert("Спочатку обери відповідь.");return}if(Number(selected.value)===q[2])examScore++;examIndex++;if(examIndex<exam.length)renderExamQuestion();else finishExam()})}
 function finishExam(){const pass=examScore>=8;$("examBox").innerHTML='<div class="result '+(pass?"pass":"fail")+'">'+(pass?"Іспит складено!":"Потрібно ще потренуватися.")+'</div><h2>'+examScore+' / 10</h2><p>'+(pass?"Вітаємо! Ти засвоїв основи Gulp workflow.":"Переглянь уроки та спробуй ще раз. Пороговий результат — 8 правильних відповідей.")+'</p><button id="retryExam" class="primary">Пройти ще раз ↻</button>';$("retryExam").addEventListener("click",startExam)}
 $("startExam").addEventListener("click",startExam);renderNav();renderProgress();showLesson(0);updatePipeline();
-
-/* Additional course UX: search, theme, reveal animations and keyboard shortcuts. */
-(function(){
-  const search=document.getElementById("moduleSearch");
-  if(search){search.addEventListener("input",function(){const term=this.value.toLowerCase();document.querySelectorAll("#moduleNav .module-link").forEach(function(item){item.style.display=item.textContent.toLowerCase().includes(term)?"flex":"none"});});}
-  const themeButton=document.getElementById("themeToggle");
-  function applyTheme(theme){document.body.classList.toggle("light",theme==="light");if(themeButton){themeButton.textContent=theme==="light"?"☾":"☼";themeButton.setAttribute("aria-label",theme==="light"?"Увімкнути темну тему":"Увімкнути світлу тему");}try{localStorage.setItem("gulpLabTheme",theme);}catch(error){}}
-  let savedTheme="dark";try{savedTheme=localStorage.getItem("gulpLabTheme")||"dark";}catch(error){}
-  applyTheme(savedTheme);
-  if(themeButton)themeButton.addEventListener("click",function(){applyTheme(document.body.classList.contains("light")?"dark":"light");});
-  const reset=document.getElementById("resetProgress");
-  if(reset)reset.addEventListener("click",function(){if(!window.confirm("Скинути прогрес усіх уроків на цьому пристрої?"))return;try{localStorage.removeItem("gulpLabProgress");}catch(error){}window.location.reload();});
-  const toast=document.getElementById("toast");let toastTimer;
-  window.gulpLabToast=function(message){if(!toast)return;toast.textContent=message;toast.classList.add("show");window.clearTimeout(toastTimer);toastTimer=window.setTimeout(function(){toast.classList.remove("show");},2200);};
-  if("IntersectionObserver"in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}});},{threshold:.12});document.querySelectorAll(".reveal").forEach(function(item){observer.observe(item);});}else{document.querySelectorAll(".reveal").forEach(function(item){item.classList.add("visible");});}
-  document.addEventListener("keydown",function(event){if(event.target.matches("input,textarea,button"))return;if(event.key==="/"){event.preventDefault();if(search)search.focus();}});
-})();
