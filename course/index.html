@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Інтерактивний практичний курс Gulp 5 українською: уроки, тести, лабораторія команд і фінальний іспит.">
+  <title>Gulp Lab — інтерактивний курс</title>
+  <link rel="stylesheet" href="./course.css">
+  <script src="./course.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./">GULP<span>LAB</span></a><nav><a href="#program">Програма</a><a href="#lab">Практика</a><a href="#exam">Іспит</a><a href="https://github.com/UlichIgor/gulp-template" target="_blank" rel="noreferrer">GitHub ↗</a></nav></header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">ПРАКТИЧНИЙ КУРС · GULP 5 · УКРАЇНСЬКОЮ</div>
+      <h1>Автоматизуй<br><em>frontend-процес.</em></h1>
+      <p class="lead">Навчись розуміти не лише команди, а й увесь шлях файлу: від <code>src/</code> до готової production-збірки.</p>
+      <div class="hero-actions"><a class="primary" href="#program">Почати навчання <span>↓</span></a><a class="secondary" href="https://gulpjs.com/docs/en/getting-started/quick-start/" target="_blank" rel="noreferrer">Документація Gulp ↗</a></div>
+      <div class="stats"><div><strong>7</strong><span>модулів</span></div><div><strong>7</strong><span>мінітестів</span></div><div><strong>10</strong><span>питань іспиту</span></div><div><strong id="progressText">0%</strong><span>твій прогрес</span></div></div>
+      <div class="progress-track"><span id="progressBar"></span></div>
+    </section>
+    <section class="layout" id="program">
+      <aside class="sidebar"><div class="side-title">НАВЧАЛЬНИЙ МАРШРУТ</div><div id="moduleNav" class="module-nav"></div><div class="side-note"><span class="pulse"></span> Прогрес зберігається на цьому пристрої</div></aside>
+      <article class="lesson-panel"><div class="lesson-meta"><span id="lessonNumber">МОДУЛЬ 01</span><span id="lessonDuration">10 хв</span></div><div id="lessonContent"></div><div class="lesson-footer"><button id="prevLesson" class="quiet">← Назад</button><button id="completeLesson" class="primary">Позначити завершеним ✓</button><button id="nextLesson" class="quiet">Далі →</button></div></article>
+    </section>
+    <section class="lab-section" id="lab"><div class="section-kicker">ІНТЕРАКТИВНА ПРАКТИКА</div><h2>Збери власний <em>Gulp pipeline.</em></h2><p>Обери операції, подивись на послідовність і скопіюй приклад. Це навчальна модель потоку, а не запуск коду на сервері.</p>
+      <div class="lab-grid"><div class="lab-options" id="pipelineOptions"></div><div class="code-card"><div class="code-head"><span>gulpfile.js · pipeline</span><button id="copyPipeline" class="copy">Копіювати</button></div><pre><code id="pipelineCode"></code></pre><div id="pipelineHint" class="hint">Обери одну або кілька операцій ліворуч.</div></div></div>
+    </section>
+    <section class="exam-section" id="exam"><div class="section-kicker">ПІДСУМКОВА ПЕРЕВІРКА</div><h2>Час перевірити <em>знання.</em></h2><p>10 запитань за матеріалами курсу. Для успішного завершення потрібно набрати щонайменше 8 правильних відповідей.</p><div id="examBox" class="exam-box"><button id="startExam" class="primary">Розпочати іспит →</button></div></section>
+  </main>
+  <footer><span>GULPLAB · Навчальний проєкт</span><a href="https://github.com/UlichIgor/gulp-template">Вихідний код на GitHub ↗</a></footer>
+</body>
+</html>
