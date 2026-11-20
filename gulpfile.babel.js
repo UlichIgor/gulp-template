@@ -18,6 +18,7 @@ import { WebpImages } from "./gulp/dev/WebpImages.js";
 import { WebpImagesBuild } from "./gulp/prod/WebpImagesBuild.js";
 import { FontsWoff2 } from "./gulp/dev/FontsWoff2.js";
 import { FontsWoff2Build } from "./gulp/prod/FontsWoff2Build.js";
+import { CourseBuild } from "./gulp/prod/CourseBuild.js";
 
 exports.Clean = Clean;
 exports.CleanBuild = CleanBuild;
@@ -49,7 +50,8 @@ const productionBuild = series(
   CleanBuild,
   parallel(FontsWoff2Build, WebpImagesBuild, ResourcesBuild),
   SpriteBuild,
-  parallel(StylesBuild, ScriptsBuild, HtmlBuild)
+  parallel(StylesBuild, ScriptsBuild, HtmlBuild),
+  CourseBuild
 );
 
 // BrowserSync is intentionally limited to development. A production build must
