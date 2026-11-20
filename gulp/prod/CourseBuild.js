@@ -1,11 +1,17 @@
 "use strict";
-const { src, dest } = require("gulp");
+const { src, dest, parallel } = require("gulp");
 
-// Додає статичний інтерактивний курс до production-сайту.
-// Курс не змінює основний сайт і доступний за адресою /course/.
+function copyCourseToRoot() {
+  return src("./course/**/*", { allowEmpty: false }).pipe(dest("./dist"));
+}
+
+function copyCourseToSubdirectory() {
+  return src("./course/**/*", { allowEmpty: false }).pipe(dest("./dist/course"));
+}
+
+// The course is the public homepage and is also available at /course/.
 function CourseBuild() {
-  return src("./course/**/*", { allowEmpty: false })
-    .pipe(dest("./dist/course"));
+  return parallel(copyCourseToRoot, copyCourseToSubdirectory)();
 }
 
 module.exports = { CourseBuild };
