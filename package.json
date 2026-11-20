@@ -1,11 +1,11 @@
 {
   "name": "template-gulp",
   "version": "1.0.0",
-  "homepage": " https://igorulich.github.io/",
-  "description": "main new version project gulp of update 11.02.2025.",
+  "homepage": "https://ulichigor.github.io/gulp-template/",
+  "description": "Gulp 5 workflow for frontend development and production builds.",
   "main": "index.html",
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "clean": "rimraf maps assets dist",
