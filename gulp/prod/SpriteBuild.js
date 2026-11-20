@@ -3,37 +3,24 @@ const { src, dest } = require("gulp");
 const config = require("../../paths.js");
 const svgSprite = require("gulp-svg-sprite");
 
-function SpriteBuild(cb) {
-  return (
-    src(config.sprite.src)
-      .pipe(
-        svgSprite({
-          shape: {
-            spacing: {
-              padding: 5,
-            },
-          },
-          mode: {
-            css: {
-              dest: ".",
-              layout: "diagonal",
-              sprite: "./sprite.svg",
-              bust: false,
-              prefix: ".%s",
-              render: {
-                css: {
-                  dest: "./sprite.css",
-                },
-                scss: {
-                  dest: "../../src/scss/_sprite.scss",
-                },
-              },
-            },
-          },
-        })
-      )
-      .pipe(dest(config.sprite.dist)),
-    cb()
-  );
+function SpriteBuild() {
+  return src(config.sprite.src, { allowEmpty: true })
+    .pipe(svgSprite({
+      shape: { spacing: { padding: 5 } },
+      mode: {
+        css: {
+          dest: ".",
+          layout: "diagonal",
+          sprite: "./sprite.svg",
+          bust: false,
+          prefix: ".%s",
+          render: {
+            css: { dest: "./sprite.css" },
+            scss: { dest: "../../src/scss/_sprite.scss" }
+          }
+        }
+      }
+    }))
+    .pipe(dest(config.sprite.dist));
 }
 module.exports = { SpriteBuild };
