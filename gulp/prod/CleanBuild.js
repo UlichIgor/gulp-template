@@ -1,7 +1,7 @@
 "use strict";
-const rimraf = require("rimraf");
+const { rimraf } = require("rimraf");
 
-async function CleanBuild(cb) {
-  rimraf.sync(["dist"]), cb();
+function CleanBuild() {
+  return rimraf("dist");
 }
-module.exports = { CleanBuild }
+module.exports = { CleanBuild };
