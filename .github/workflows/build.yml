@@ -21,5 +21,9 @@ jobs:
         run: npm ci
       - name: Run production build
         run: npm run prod
-      - name: Verify generated entry point
-        run: test -s dist/index.html
+      - name: Verify generated website and course
+        run: |
+          test -s dist/index.html
+          test -s dist/course/index.html
+          test -s dist/course/course.css
+          test -s dist/course/course.js
