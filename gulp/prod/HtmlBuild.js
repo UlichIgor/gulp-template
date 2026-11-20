@@ -2,28 +2,14 @@
 const { src, dest } = require("gulp");
 const config = require("../../paths.js");
 const fileinclude = require("gulp-file-include");
-const htmlmin = require('gulp-htmlmin');
-var browserSync = require('browser-sync').create();
-var rename = require("gulp-rename");
+const htmlmin = require("gulp-htmlmin");
+const rename = require("gulp-rename");
 
-function HtmlBuild(cb) {
-  return (
-    src(config.html.src)
-      .pipe(
-        fileinclude({
-          prefix: "@@",
-          basepath: "@file",
-        })
-      )
-      .pipe(
-        rename({
-          basename: "index",
-        }),
-    )
-      .pipe(htmlmin({ collapseWhitespace: true }))
-      .pipe(dest(config.html.dist))
-      .pipe(browserSync.reload({ stream: true })),
-    cb()
-  );
+function HtmlBuild() {
+  return src(config.html.src)
+    .pipe(fileinclude({ prefix: "@@", basepath: "@file" }))
+    .pipe(rename({ basename: "index" }))
+    .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
+    .pipe(dest(config.html.dist));
 }
 module.exports = { HtmlBuild };
